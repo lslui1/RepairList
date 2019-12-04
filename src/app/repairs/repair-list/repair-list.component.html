@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <div class="card-deck">
     <app-repair-job
-    [repair]="repairs[0]"
-    (repairClicked)="parentFunctionHandler($event)"
+      *ngFor="let repair of repairs"
+      [repair]="repair"
+      (repairClicked)="parentFunctionHandler($event)"
     ></app-repair-job>
   </div>
 </div>

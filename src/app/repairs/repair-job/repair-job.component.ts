@@ -14,6 +14,7 @@ export class RepairJobComponent implements OnInit {
   repairClicked: EventEmitter<Repair> = new EventEmitter<Repair>();
 
   showRepair() {
+    this.repair.completed = true;
     this.repairClicked.emit(this.repair);
   }
 

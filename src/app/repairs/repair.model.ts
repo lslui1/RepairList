@@ -8,4 +8,5 @@ export interface Repair {
   tools?: any;
   startDate?: Date;
   completionDate?: Date;
+  completed: boolean;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Repair } from '../repair.model';
+import { REPAIRS } from '../repairs.data';
 
 @Component({
   selector: 'app-repair-list',
@@ -12,17 +13,10 @@ export class RepairListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.repairs = [
-      {
-        id: 1,
-        name: 'car sway bar bushings',
-        priority: 'Low',
-        status: 'Incomplete'
-      }
-    ];
+    this.repairs = REPAIRS;
   }
 
   parentFunctionHandler(repair) {
-    alert('Repair ' + repair.name + ' was sent from the repair card component');
+    console.log('Repair ' + repair.name + ' was flagged as completed');
   }
 }
