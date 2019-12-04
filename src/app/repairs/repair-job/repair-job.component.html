@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">ID: {{ repair.id }}</h2>
+          <h3 class="card-title">Description: {{ repair.name }}</h3>
+          <h3 class="card-text">Priority: {{ repair.priority }}</h3>
+          <h3>Materials: {{ repair.materials }} {{ repair.price }}</h3>
+          <h3>Required Tools: {{ repair.tools }}</h3>
+          <h3>Start Date: {{ repair.startDate }} </h3>
+          <h3>Completion Date: {{ repair.completionDate }}</h3>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary float-right" (click)="showRepair()">
+        See Details
+      </button>
+  </div>
+  </div>
+</div>
