@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repair } from '../repair.model';
 import { REPAIRS } from '../repairs.data';
+import { RepairService } from '../shared/repair.service';
 
 @Component({
   selector: 'app-repair-list',
@@ -10,10 +11,14 @@ import { REPAIRS } from '../repairs.data';
 export class RepairListComponent implements OnInit {
   repairs: Repair[];
 
-  constructor() { }
+  constructor(private repairService: RepairService) { }
 
-  ngOnInit() {
-    this.repairs = REPAIRS;
+  ngOnInit(): void {
+    this.getRepairs();
+  }
+
+  getRepairs() {
+    this.repairs = this.repairService.getRepairs();
   }
 
   parentFunctionHandler(repair) {
