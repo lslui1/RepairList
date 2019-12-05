@@ -1,36 +1,35 @@
 <div class="container-fluid">
   <div class="card-deck">
-    <div class="card" [ngStyle]="{ 'background-color': repair.completed ? '#93df93' : '' }">
-        <div class="inner">
-            <img class="card-img-top cover" src="assets/img/{{ repair.type }}.jpg" alt="{{ repair.type }}"
-              style="border: 2px solid grey" />
-        </div>
+    <div class="card" [ngStyle]="{ 'background-color': repair.completed ? '#93df93' : 'orange' }">
+      <div class="inner">
+          <img class="card-img-top cover" src="assets/img/{{ repair.type }}.jpg" alt="{{ repair.type }}"
+            style="border: 2px solid grey" />
+      </div>
+      <img
+      *ngIf="repair.completed"
+      src="assets/img/smile.png"
+      style="width:40px;height:40px;"
+      />
+      <img
+      *ngIf="!repair.completed;"
+      src="assets/img/frown.png"
+      style="width:40px;height:40px;"
+      />
       <div class="card-body">
-        <h2 class="card-title">{{ repair.name }}</h2>
         <div class="scrollable">
-          <img
-          *ngIf="repair.completed"
-          src="assets/img/smile.png"
-          style="width:40px;height:40px;"
-          />
-          <img
-          *ngIf="!repair.completed;"
-          src="assets/img/frown.png"
-          style="width:40px;height:40px;"
-          />
-          <h3 class="card-title">Description: {{ repair.name }}</h3>
-          <h3 class="card-text">Priority: {{ repair.priority }}</h3>
-          <h3>Materials: {{ repair.materials }} {{ repair.price }}</h3>
-          <h3>Required Tools: {{ repair.tools }}</h3>
-          <h3>Start Date: {{ repair.startDate }} </h3>
-          <h3>Completion Date: {{ repair.completionDate }}</h3>
+          <h5 class="card-title">Description: {{ repair.name }}</h5>
+          <h5 class="card-text">Priority: {{ repair.priority }}</h5>
+          <h5>Materials: {{ repair.materials }} {{ repair.price }}</h5>
+          <h5>Required Tools: {{ repair.tools }}</h5>
+          <h5>Start Date: {{ repair.startDate }} </h5>
+          <h5>Completion Date: {{ repair.completionDate }}</h5>
         </div>
       </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-primary float-right" (click)="showRepair()">
-          Flag as completed
-        </button>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary float-right" (click)="showRepair()">
+        Flag as completed
+      </button>
     </div>
   </div>
 </div>
