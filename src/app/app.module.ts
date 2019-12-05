@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { AboutComponent } from './about/about.component';
 import { RepairsModule } from './repairs/repairs.module';
 
 @NgModule({
@@ -15,8 +14,7 @@ import { RepairsModule } from './repairs/repairs.module';
     AppComponent,
     WelcomeComponent,
     NavbarComponent,
-    NotfoundComponent,
-    AboutComponent
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

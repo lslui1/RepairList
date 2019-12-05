@@ -9,7 +9,14 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/welcome", pathMatch: "full" },
-  { path: "about", component: AboutComponent },
+  {
+    path: "about",
+    loadChildren: () => import('./about/about.module')
+      .then(mod => {
+        console.log('in promise loadChildren');
+        return mod.AboutModule;
+      })
+  },
   { path: "welcome", component: WelcomeComponent },
   { path: "repairs", component: RepairListComponent },
   { path: "**", component: NotfoundComponent, pathMatch: "full" }
