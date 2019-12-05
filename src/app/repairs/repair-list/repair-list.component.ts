@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repair } from '../repair.model';
 import { RepairService } from '../shared/repair.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-repair-list',
@@ -8,7 +9,8 @@ import { RepairService } from '../shared/repair.service';
   styleUrls: ['./repair-list.component.css']
 })
 export class RepairListComponent implements OnInit {
-  repairs: Repair[];
+  // repairs: Repair[];
+  repairs: Observable<Repair[]>;
 
   constructor(private repairService: RepairService) { }
 
@@ -17,11 +19,11 @@ export class RepairListComponent implements OnInit {
   }
 
   getRepairs() {
-    // this.repairs = this.repairService.getRepairs();
-    this.repairService.getRepairs()
-    .subscribe(
-        repairs => this.repairs = repairs,
-        error => console.log('Error: ', error));
+    this.repairs = this.repairService.getRepairs();
+    // this.repairService.getRepairs()
+    // .subscribe(
+    //     repairs => this.repairs = repairs,
+    //     error => console.log('Error: ', error));
   }
 
   parentFunctionHandler(repair) {

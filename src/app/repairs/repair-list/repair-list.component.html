@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="card-deck">
     <app-repair-job
-      *ngFor="let repair of repairs"
+      *ngFor="let repair of repairs | async"
       [repair]="repair"
       (repairClicked)="parentFunctionHandler($event)"
     ></app-repair-job>
