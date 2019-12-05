@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { REPAIRS } from '../repairs.data';
+import { Observable } from 'rxjs';
+import { Repair } from '../repair.model';
+// import { REPAIRS } from '../repairs.data';
+
 @Injectable({
   providedIn: 'root'
 })
 export class RepairService {
+  url = 'http://localhost:5558/repairs';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getRepairs() {
-    return REPAIRS;
+  getRepairs(): Observable<Repair[]> {
+    return this.http.get<Repair[]>(this.url);
   }
 }
