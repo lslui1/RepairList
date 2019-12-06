@@ -20,16 +20,23 @@
           <h5 class="card-title">Description: {{ repair.name }}</h5>
           <h5 class="card-text">Priority: {{ repair.priority }}</h5>
           <h5>Materials: {{ repair.materials }} {{ repair.price }}</h5>
-          <h5>Required Tools: {{ repair.tools }}</h5>
           <h5>Start Date: {{ repair.startDate }} </h5>
           <h5>Completion Date: {{ repair.completionDate }}</h5>
         </div>
       </div>
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary float-right" (click)="showRepair()">
-        Flag as completed
-      </button>
+        <div class="btn-group">
+          <button class="btn btn-primary" (click)="setComplete()">
+              Flag as completed
+          </button>
+              <button (click)="startRepair()">
+                  Start repair
+              </button>
+          <button (click)="showTools()">
+              Show required tools
+          </button>
+        </div>
     </div>
   </div>
 </div>

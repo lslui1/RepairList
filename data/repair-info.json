@@ -6,7 +6,19 @@
       "type": "car",
       "priority": "Low",
       "status": "Incomplete",
-      "completed": false
+      "completed": false,
+      "tools": [
+        {
+          "id": 1,
+          "name": "socket wrench 10mm",
+          "type": "manual"
+        },
+        {
+          "id": 2,
+          "name": "impact wrench",
+          "type": "power"
+        }
+      ]
     },
     {
       "id": 2,

@@ -6,8 +6,15 @@ export interface Repair {
   status: string;
   materials?: any;
   price?: number;
-  tools?: any;
+  tools?: Tool[];
   startDate?: string;
   completionDate?: string;
   completed: boolean;
+}
+
+export interface Tool {
+  id: number;
+  name: string;
+  description?: string;
+  type?: string;
 }

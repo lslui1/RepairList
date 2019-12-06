@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RepairListComponent } from './repairs/repair-list/repair-list.component';
 import { NotfoundComponent } from './notfound/notfound.component';
